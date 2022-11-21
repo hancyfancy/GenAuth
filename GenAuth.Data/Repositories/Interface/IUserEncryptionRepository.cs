@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace GenAuth.Data.Repositories.Interface
 {
-    public interface IUserRepository
+    public interface IUserEncryptionRepository
     {
-        long Insert(User user);
+        byte[] InsertOrUpdate(long userId, byte[] encryptionKey);
 
-        int UpdateLastActive(long userId);
+        UserEncryption Get(long userId);
     }
 }

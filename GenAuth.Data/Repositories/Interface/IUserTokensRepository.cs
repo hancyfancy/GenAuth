@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace GenAuth.Data.Repositories.Interface
 {
-    public interface IUserRepository
+    public interface IUserTokensRepository
     {
-        long Insert(User user);
+        string InsertOrUpdate(long userId, string token);
 
-        int UpdateLastActive(long userId);
+        UserToken Get(long userId);
+
+        UserToken Get(string token);
     }
 }
